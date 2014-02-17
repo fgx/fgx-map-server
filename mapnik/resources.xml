@@ -119,7 +119,7 @@
       <Parameter name="dbname">fgxmap</Parameter>
       <Parameter name="user">webuser</Parameter>      
       <Parameter name="password">password</Parameter>
-      <Parameter name="table">(select * from airport where apt_type='land') as foo</Parameter>
+      <Parameter name="table">(select * from v_airport) as foo</Parameter>
     </Datasource>
   </Layer>
   
@@ -222,14 +222,15 @@
   
   <!-- ********** XPLANE 1000: NDB (ndb) ********** -->
   
-  <!--<Style name="NDB">
+  <Style name="NDB">
     <Rule>
-	  <PointSymbolizer file="/home/map/fgx-map/fgx-map/htdocs/images/ndb.png" width="35" height="35" type="png" opacity="0.7"/>
-	  <TextSymbolizer name="[navaid_id]" dy="-10" dx="23" face-name="Asap Regular" character-spacing="2" horizontal-alignment="right" size="11" fill="red" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true"/>
-      <TextSymbolizer name="[navaid_name]" dy="0" dx="23" face-name="Asap Regular" character-spacing="2" horizontal-alignment="right" size="9" fill="black" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true"/>
+	  <PointSymbolizer file="/home/fgxx/fgx-map-server/images/ndb.png" opacity="0.7"/>
+	  <TextSymbolizer  dy="-10" dx="23" face-name="sans-serif" character-spacing="2" horizontal-alignment="right" size="11" fill="red" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true">[ident]</TextSymbolizer>
+      <TextSymbolizer s dy="0" dx="23" face-name="sans-serif" character-spacing="2" horizontal-alignment="right" size="9" fill="black" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true">[name]</TextSymbolizer>
+      <!--
  	  <TextSymbolizer name="[freq_khz]" dy="9" dx="23" face-name="Asap Bold" character-spacing="2" size="11" fill="#000000" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true"/>
 	  <TextSymbolizer name="[elevation_m]" dy="10" dx="74" face-name="Asap Regular" character-spacing="2" size="9" fill="#000000" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true"/>
-	  <TextSymbolizer name="[range_km]" dy="22" dx="23" face-name="Asap Regular" character-spacing="2" size="9" fill="#000000" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true"/>
+	  <TextSymbolizer name="[range_km]" dy="22" dx="23" face-name="Asap Regular" character-spacing="2" size="9" fill="#000000" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true"/> -->
 	</Rule>
   </Style>
   
@@ -242,9 +243,11 @@
       <Parameter name="dbname">fgxmap</Parameter>
       <Parameter name="user">webuser</Parameter>      
       <Parameter name="password">password</Parameter>
-      <Parameter name="table">(select * from navaid where nav_suffix='ndb') as foo</Parameter>
+      <Parameter name="geometry_field">point</Parameter>
+      <Parameter name="srid">3857</Parameter>
+      <Parameter name="table">(select name, ident, point from v_navaid where ntype='ndb') as foo</Parameter>
     </Datasource>
-  </Layer>-->
+  </Layer>
   
   <!-- ********** XPLANE 1000: ILS (ils) ********** -->
   
@@ -317,11 +320,11 @@
   </Layer>-->
   
   <!-- ********** XPLANE 1000: FIX (fix) ********** -->
-  
-  <!--<Style name="FIX">
+  <!--
+  <Style name="FIX">
     <Rule>
 	 <Filter>[fix_name].match('[A-Z][A-Z][A-Z][A-Z][A-Z]')</Filter>
-	 <PointSymbolizer file="/home/map/fgx-map/fgx-map/htdocs/images/vfr_fix.png" width="16" height="16" type="png" opacity="0.9"/>
+	 <PointSymbolizer file="/home/fgxx/fgx-map-server/images/vfr_fix.png" width="16" height="16" type="png" opacity="0.9"/>
 	 <TextSymbolizer name="[fix_name]" dy="-5" dx="7" face-name="Asap Regular" character-spacing="2" size="9" fill="#000000" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="true" avoid-edges="true"/>
 	 </Rule>
   </Style>
@@ -337,8 +340,8 @@
       <Parameter name="password">password</Parameter>
       <Parameter name="table">fix</Parameter>
     </Datasource>
-  </Layer>-->
-  
+  </Layer>
+  -->
   <!-- ********** RELIEF ********** -->
 
   <!--<Style name="RELIEF">
