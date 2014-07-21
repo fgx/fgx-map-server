@@ -12,20 +12,21 @@
 
   <!-- ********** NATURAL EARTH : LANDMASS ********** -->
 
-<!--  <Style name="FGX_NE_LANDMASS">
+  <Style name="FGX_NE_LANDMASS">
     <Rule>
       <PolygonSymbolizer fill="#fbf8ef" />
     </Rule>
   </Style>
   
+  <!--
   <Layer name="natural_earth_landmass" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs">
     <StyleName>FGX_NE_LANDMASS</StyleName>
     <Datasource>
       <Parameter name="type">shape</Parameter>
-      <Parameter name="file">/home/map/fgx-map/fgx-map/htdocs/data/ne_layers/3857/landmass</Parameter>
+      <Parameter name="file">/home/fgxx/fgx-map-server/data/ne_layers/3857/landmass</Parameter>
     </Datasource>
-  </Layer>-->
-  
+  </Layer>
+  -->
   
   <!-- ********** OSM : Coastline ********** -->
 
@@ -71,28 +72,30 @@
 	<Rule>
          <Filter>[apt_size] = 'large'</Filter>
           <MaxScaleDenominator>100000000</MaxScaleDenominator>
-          <PointSymbolizer file="/home/fgxx/fgx-map-server/icons/fgxmap_png/apt_civ_18x18_25.png" allow-overlap="true" opacity="1.0"/>
-          <TextSymbolizer name="[apt_ident]" dy="-11" dx="15" face-name="Asap Regular" character-spacing="2" horizontal-alignment="right" size="11" fill="blue" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="true" />
-        </Rule>
-        <Rule>
-	 <Filter>[apt_size] = 'large'</Filter>
-	  <MaxScaleDenominator>10000000</MaxScaleDenominator>
-          <TextSymbolizer name="[apt_name_ascii]" dy="-1" dx="15" face-name="Asap Regular" character-spacing="2" horizontal-alignment="right" size="9" fill="black" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="true"/>
-        </Rule>
+          <PointSymbolizer file="/home/fgxx/fgx-map-server/icons/fgxmap_png/apt_civ_18x18_25.png" allow-overlap="true" opacity="0.5"/>
+
+     </Rule>
+    <Rule>
+         <Filter>[apt_size] = 'large'</Filter>
+          <MaxScaleDenominator>100000000</MaxScaleDenominator>
+
+          <TextSymbolizer dy="-11" dx="15" face-name="DejaVu Sans Book" character-spacing="2" horizontal-alignment="right" size="11" fill="blue" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="true">[apt_ident]</TextSymbolizer>
+     </Rule>
+     
 	<Rule> 
 	 <Filter>[apt_size] = 'medium'</Filter>
 	  <MaxScaleDenominator>10000000</MaxScaleDenominator>
 	  <MinScaleDenominator>3000000</MinScaleDenominator>
 	  <PointSymbolizer file="/home/fgxx/fgx-map-server/icons/fgxmap_png/apt_civ_18x18_15.png" opacity="0.9" allow-overlap="true"/>
 	  <TextSymbolizer name="[apt_ident]" dy="-11" dx="15" face-name="Asap Regular" character-spacing="2" horizontal-alignment="right" size="11" fill="blue" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="true"/>
-          <TextSymbolizer name="[apt_name_ascii]" dy="-1" dx="15" face-name="Asap Regular" character-spacing="2" horizontal-alignment="right" size="9" fill="black" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="true"/>
+          <TextSymbolizer name="[apt_name]" dy="-1" dx="15" face-name="Asap Regular" character-spacing="2" horizontal-alignment="right" size="9" fill="black" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="true"/>
 	</Rule>
 	<Rule> 
 	 <Filter>[apt_size] = 'medium'</Filter>
 	  <MaxScaleDenominator>3000000</MaxScaleDenominator>
 	  <PointSymbolizer file="/home/fgxx/fgx-map-server/icons/fgxmap_png/apt_civ_18x18_15.png" opacity="0.9" allow-overlap="true" />
 	  <TextSymbolizer name="[apt_ident]" dy="-11" dx="15" face-name="Asap Regular" character-spacing="2" horizontal-alignment="right" size="11" fill="blue" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="true"/>
-          <TextSymbolizer name="[apt_name_ascii]" dy="-1" dx="15" face-name="Asap Regular" character-spacing="2" horizontal-alignment="right" size="9" fill="black" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="true"/>
+          <TextSymbolizer name="[apt_name]" dy="-1" dx="15" face-name="Asap Regular" character-spacing="2" horizontal-alignment="right" size="9" fill="black" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="true"/>
 	</Rule>
 	<Rule>
 	 <Filter>[apt_size] = 'small'</Filter>
@@ -106,7 +109,7 @@
 	 <MaxScaleDenominator>3000000</MaxScaleDenominator>
 	 <PointSymbolizer file="/home/fgxx/fgx-map-server/icons/fgxmap_png/apt_civ_13x13_10.png" opacity="0.9" allow-overlap="true"/>
 	 <TextSymbolizer name="[apt_ident]" dy="-11" dx="15" face-name="Asap Regular" character-spacing="2" horizontal-alignment="right" size="9" fill="blue" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="true"/>
-	 <TextSymbolizer name="[apt_name_ascii]" dy="-1" dx="15" face-name="Asap Regular" character-spacing="2" horizontal-alignment="right" size="9" fill="black" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="true"/>
+	 <TextSymbolizer name="[apt_name]" dy="-1" dx="15" face-name="Asap Regular" character-spacing="2" horizontal-alignment="right" size="9" fill="black" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="true"/>
    </Rule>
    </Style>
    
