@@ -59,8 +59,8 @@
       <Parameter name="host">127.0.0.1</Parameter>
 	  <Parameter name="port">5432</Parameter>
       <Parameter name="dbname">fgxmap</Parameter>
-      <Parameter name="user">webuser</Parameter>      
-      <Parameter name="password">password</Parameter>
+      <Parameter name="user">fgxx</Parameter>      
+      <Parameter name="password">foobar</Parameter>
       <Parameter name="table">runway</Parameter>
     </Datasource>
   </Layer>-->
@@ -117,8 +117,8 @@
       <Parameter name="host">127.0.0.1</Parameter>
 	  <Parameter name="port">5432</Parameter>
       <Parameter name="dbname">fgxmap</Parameter>
-      <Parameter name="user">webuser</Parameter>      
-      <Parameter name="password">password</Parameter>
+      <Parameter name="user">fgxx</Parameter>      
+      <Parameter name="password">foobar</Parameter>
       <Parameter name="table">(select * from v_airport) as foo</Parameter>
     </Datasource>
   </Layer>
@@ -138,8 +138,8 @@
       <Parameter name="host">127.0.0.1</Parameter>
 	  <Parameter name="port">5432</Parameter>
       <Parameter name="dbname">fgxmap</Parameter>
-      <Parameter name="user">webuser</Parameter>      
-      <Parameter name="password">password</Parameter>
+      <Parameter name="user">fgxx</Parameter>      
+      <Parameter name="password">foobar</Parameter>
 	  <Parameter name="estimate_extent">false</Parameter>
 	  <Parameter name="table">(select * from airport where apt_type='sea') as foo</Parameter>
     </Datasource>
@@ -160,8 +160,8 @@
       <Parameter name="host">127.0.0.1</Parameter>
 	  <Parameter name="port">5432</Parameter>
       <Parameter name="dbname">fgxmap</Parameter>
-      <Parameter name="user">webuser</Parameter>      
-      <Parameter name="password">password</Parameter>
+      <Parameter name="user">fgxx</Parameter>      
+      <Parameter name="password">foobar</Parameter>
 	  <Parameter name="estimate_extent">false</Parameter>
 	  <Parameter name="table">(select * from airport where apt_type='heli') as foo</Parameter>
     </Datasource>
@@ -188,8 +188,8 @@
       <Parameter name="host">127.0.0.1</Parameter>
 	  <Parameter name="port">5432</Parameter>
       <Parameter name="dbname">fgxmap</Parameter>
-      <Parameter name="user">webuser</Parameter>      
-      <Parameter name="password">password</Parameter>
+      <Parameter name="user">fgxx</Parameter>      
+      <Parameter name="password">foobar</Parameter>
       <Parameter name="table">(select * from navaid where nav_suffix='vor') as foo</Parameter>
     </Datasource>
   </Layer>-->
@@ -214,8 +214,8 @@
       <Parameter name="host">127.0.0.1</Parameter>
 	  <Parameter name="port">5432</Parameter>
       <Parameter name="dbname">fgxmap</Parameter>
-      <Parameter name="user">webuser</Parameter>      
-      <Parameter name="password">password</Parameter>
+      <Parameter name="user">fgxx</Parameter>      
+      <Parameter name="password">foobar</Parameter>
       <Parameter name="table">(select * from navaid where nav_suffix='dme') as foo</Parameter>
     </Datasource>
   </Layer>-->
@@ -226,14 +226,13 @@
     <Rule>
 	  <PointSymbolizer file="/home/fgxx/fgx-map-server/images/ndb.png" opacity="0.7"/>
 	  <TextSymbolizer  dy="-10" dx="23" face-name="sans-serif" character-spacing="2" horizontal-alignment="right" size="11" fill="red" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true">[ident]</TextSymbolizer>
-      <TextSymbolizer s dy="0" dx="23" face-name="sans-serif" character-spacing="2" horizontal-alignment="right" size="9" fill="black" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true">[name]</TextSymbolizer>
+      <TextSymbolizer  dy="0" dx="23" face-name="sans-serif" character-spacing="2" horizontal-alignment="right" size="9" fill="black" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true">[name]</TextSymbolizer>
       <!--
  	  <TextSymbolizer name="[freq_khz]" dy="9" dx="23" face-name="Asap Bold" character-spacing="2" size="11" fill="#000000" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true"/>
 	  <TextSymbolizer name="[elevation_m]" dy="10" dx="74" face-name="Asap Regular" character-spacing="2" size="9" fill="#000000" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true"/>
 	  <TextSymbolizer name="[range_km]" dy="22" dx="23" face-name="Asap Regular" character-spacing="2" size="9" fill="#000000" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true"/> -->
 	</Rule>
-  </Style>
-  
+  </Style>  
   <Layer name="NDB" status="on" clear-label-cache="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs">
     <StyleName>NDB</StyleName>
 	<Datasource>
@@ -241,8 +240,8 @@
       <Parameter name="host">127.0.0.1</Parameter>
 	  <Parameter name="port">5432</Parameter>
       <Parameter name="dbname">fgxmap</Parameter>
-      <Parameter name="user">webuser</Parameter>      
-      <Parameter name="password">password</Parameter>
+      <Parameter name="user">fgxx</Parameter>      
+      <Parameter name="password">foobar</Parameter>
       <Parameter name="geometry_field">point</Parameter>
       <Parameter name="srid">3857</Parameter>
       <Parameter name="table">(select name, ident, point from v_navaid where ntype='ndb') as foo</Parameter>
@@ -265,8 +264,8 @@
       <Parameter name="host">127.0.0.1</Parameter>
 	  <Parameter name="port">5432</Parameter>
       <Parameter name="dbname">fgxmap</Parameter>
-      <Parameter name="user">webuser</Parameter>      
-      <Parameter name="password">password</Parameter>
+      <Parameter name="user">fgxx</Parameter>      
+      <Parameter name="password">foobar</Parameter>
       <Parameter name="table">ils</Parameter>
     </Datasource>
   </Layer>-->
@@ -290,8 +289,8 @@
       <Parameter name="host">127.0.0.1</Parameter>
 	  <Parameter name="port">5432</Parameter>
       <Parameter name="dbname">fgxmap</Parameter>
-      <Parameter name="user">webuser</Parameter>      
-      <Parameter name="password">password</Parameter>
+      <Parameter name="user">fgxx</Parameter>      
+      <Parameter name="password">foobar</Parameter>
       <Parameter name="table">ils</Parameter>
     </Datasource>
   </Layer>-->
@@ -313,8 +312,8 @@
       <Parameter name="host">127.0.0.1</Parameter>
 	  <Parameter name="port">5432</Parameter>
       <Parameter name="dbname">fgxmap</Parameter>
-      <Parameter name="user">webuser</Parameter>      
-      <Parameter name="password">password</Parameter>
+      <Parameter name="user">fgxx</Parameter>      
+      <Parameter name="password">foobar</Parameter>
       <Parameter name="table">marker</Parameter>
     </Datasource>
   </Layer>-->
@@ -336,8 +335,8 @@
       <Parameter name="host">127.0.0.1</Parameter>
 	  <Parameter name="port">5432</Parameter>
       <Parameter name="dbname">fgxmap</Parameter>
-      <Parameter name="user">webuser</Parameter>      
-      <Parameter name="password">password</Parameter>
+      <Parameter name="user">fgxx</Parameter>      
+      <Parameter name="password">foobar</Parameter>
       <Parameter name="table">fix</Parameter>
     </Datasource>
   </Layer>
