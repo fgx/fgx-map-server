@@ -229,8 +229,8 @@
   
   <Style name="NDB">
     <Rule>
-	  <PointSymbolizer file="/home/fgxx/fgx-map-server/images/ndb.png" opacity="1.0"/>
-	  <TextSymbolizer  dy="-10" dx="23" face-name="DejaVu Sans Book" character-spacing="2" horizontal-alignment="right" size="11" fill="brown" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true">[ident]</TextSymbolizer>
+	  <PointSymbolizer file="/home/fgxx/fgx-map-server/images/ndb.png" opacity="0.5"/>
+	  <TextSymbolizer  dy="-10" dx="0" face-name="DejaVu Sans Book" character-spacing="2" horizontal-alignment="right" size="11" fill="brown" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true">[ident]</TextSymbolizer>
       <!--
  	  <TextSymbolizer name="[freq_khz]" dy="9" dx="23" face-name="Asap Bold" character-spacing="2" size="11" fill="#000000" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true"/>
 	  <TextSymbolizer name="[elevation_m]" dy="10" dx="74" face-name="DejaVu Sans Book" character-spacing="2" size="9" fill="#000000" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true"/>
@@ -256,7 +256,7 @@
   
     <Style name="WP">
     <Rule>
-      <PointSymbolizer file="/home/fgxx/fgx-map-server/images/ndb.png" opacity="0.7"/>
+      <PointSymbolizer file="/home/fgxx/fgx-map-server/images/city-red.png" opacity="0.7"/>
       <TextSymbolizer  dy="-10" dx="23" face-name="sans-serif" character-spacing="2" horizontal-alignment="right" size="11" fill="red" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true">[ident]</TextSymbolizer>
       
       
