@@ -175,8 +175,8 @@
   
   <Style name="VOR">
     <Rule>
-	  <PointSymbolizer file="/home/fgxx/fgx-map-server/images/vor.png" width="16" height="16" type="png" opacity="0.7"/>
-      <TextSymbolizer dy="-10" dx="15" face-name="DejaVu Sans Book" character-spacing="2" horizontal-alignment="right" size="11" fill="red" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="false">[ident]</TextSymbolizer>
+	  <PointSymbolizer file="/home/fgxx/fgx-map-server/images/vor.png" width="16" height="16" type="png" opacity="1.0"/>
+      <TextSymbolizer dy="-10" dx="15" face-name="DejaVu Sans Book" character-spacing="2" horizontal-alignment="right" size="11" fill="red" halo-fill= "#ff0000" halo-radius="1" allow-overlap="false" avoid-edges="false">[ident]</TextSymbolizer>
       
       <!--<TextSymbolizer name="[freq_mhz]" dy="9" dx="15" face-name="Asap Bold" character-spacing="2" size="11" fill="#000000" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true"/>
       <TextSymbolizer  dy="0" dx="15" face-name="DejaVu Sans Book" character-spacing="2" horizontal-alignment="right" size="9" fill="black" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="false">[name]</TextSymbolizer>
@@ -194,20 +194,21 @@
       <Parameter name="dbname">fgxmap</Parameter>
       <Parameter name="user">fgxx</Parameter>      
       <Parameter name="password">foobar</Parameter>
-      <Parameter name="table">(select * from m_navaid) as foo</Parameter>
+      <Parameter name="table">(select * from m_navaid where ntype='vor') as foo</Parameter>
     </Datasource>
   </Layer>
   
   <!-- ********** XPLANE 1000: DME (dme) ********** -->
   
-  <!--<Style name="DME">
+  <Style name="DME">
     <Rule>
-	<PointSymbolizer file="/home/map/fgx-map/fgx-map/htdocs/images/dme.png" width="16" height="16" type="png" opacity="0.7"/>
-	  <TextSymbolizer name="[navaid_id]" dy="-10" dx="15" face-name="DejaVu Sans Book" character-spacing="2" horizontal-alignment="right" size="11" fill="red" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true"/>
+	<PointSymbolizer file="/home/fgxx/fgx-map-server/images/dme.png" width="16" height="16" type="png" opacity="0.7"/>
+    <TextSymbolizer dy="-10" dx="15" face-name="DejaVu Sans Book" character-spacing="2" horizontal-alignment="right" size="11" fill="purple" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true">[ident]</TextSymbolizer>
+      <!--
       <TextSymbolizer name="[navaid_name]" dy="0" dx="15" face-name="DejaVu Sans Book" character-spacing="2" horizontal-alignment="right" size="9" fill="black" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true"/>
 	  <TextSymbolizer name="[freq_mhz]" dy="9" dx="15" face-name="Asap Bold" character-spacing="2" size="11" fill="#000000" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true"/>
 	  <TextSymbolizer name="[elevation_m]" dy="10" dx="66" face-name="DejaVu Sans Book" character-spacing="2" size="9" fill="#000000" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true"/>
-	  <TextSymbolizer name="[range_km]" dy="22" dx="15" face-name="DejaVu Sans Book" character-spacing="2" size="9" fill="#000000" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true"/>
+      <TextSymbolizer name="[range_km]" dy="22" dx="15" face-name="DejaVu Sans Book" character-spacing="2" size="9" fill="#000000" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true"/> -->
 	</Rule>
   </Style>
   
@@ -220,17 +221,16 @@
       <Parameter name="dbname">fgxmap</Parameter>
       <Parameter name="user">fgxx</Parameter>      
       <Parameter name="password">foobar</Parameter>
-      <Parameter name="table">(select * from navaid where nav_suffix='dme') as foo</Parameter>
+      <Parameter name="table">(select * from mv_navaid where ntype='dme') as foo</Parameter>
     </Datasource>
-  </Layer>-->
+  </Layer>
   
   <!-- ********** XPLANE 1000: NDB (ndb) ********** -->
   
   <Style name="NDB">
     <Rule>
-	  <PointSymbolizer file="/home/fgxx/fgx-map-server/images/ndb.png" opacity="0.7"/>
-	  <TextSymbolizer  dy="-10" dx="23" face-name="sans-serif" character-spacing="2" horizontal-alignment="right" size="11" fill="red" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true">[ident]</TextSymbolizer>
-      <TextSymbolizer  dy="0" dx="23" face-name="sans-serif" character-spacing="2" horizontal-alignment="right" size="9" fill="black" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true">[name]</TextSymbolizer>
+	  <PointSymbolizer file="/home/fgxx/fgx-map-server/images/ndb.png" opacity="1.0"/>
+	  <TextSymbolizer  dy="-10" dx="23" face-name="DejaVu Sans Book" character-spacing="2" horizontal-alignment="right" size="11" fill="brown" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true">[ident]</TextSymbolizer>
       <!--
  	  <TextSymbolizer name="[freq_khz]" dy="9" dx="23" face-name="Asap Bold" character-spacing="2" size="11" fill="#000000" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true"/>
 	  <TextSymbolizer name="[elevation_m]" dy="10" dx="74" face-name="DejaVu Sans Book" character-spacing="2" size="9" fill="#000000" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true"/>
@@ -248,9 +248,35 @@
       <Parameter name="password">foobar</Parameter>
       <Parameter name="geometry_field">point</Parameter>
       <Parameter name="srid">3857</Parameter>
-      <Parameter name="table">(select name, ident, point from v_navaid where ntype='ndb') as foo</Parameter>
+      <Parameter name="table">(select * from mv_navaid where ntype='ndb') as foo</Parameter>
     </Datasource>
   </Layer>
+  
+  
+  
+    <Style name="WP">
+    <Rule>
+      <PointSymbolizer file="/home/fgxx/fgx-map-server/images/ndb.png" opacity="0.7"/>
+      <TextSymbolizer  dy="-10" dx="23" face-name="sans-serif" character-spacing="2" horizontal-alignment="right" size="11" fill="red" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true">[ident]</TextSymbolizer>
+      
+      
+    </Rule>
+  </Style>  
+  <Layer name="WP" status="on" clear-label-cache="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs">
+    <StyleName>WP</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="host">127.0.0.1</Parameter>
+      <Parameter name="port">5432</Parameter>
+      <Parameter name="dbname">fgxmap</Parameter>
+      <Parameter name="user">fgxx</Parameter>      
+      <Parameter name="password">foobar</Parameter>
+      <Parameter name="geometry_field">point</Parameter>
+      <Parameter name="srid">3857</Parameter>
+      <Parameter name="table">(select * from mv_wp) as foo</Parameter>
+    </Datasource>
+  </Layer>
+  
   
   <!-- ********** XPLANE 1000: ILS (ils) ********** -->
   
