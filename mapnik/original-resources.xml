@@ -32,7 +32,7 @@
   
   <Style name="RWY">
     <Rule>
-	 <PolygonSymbolizer fill="#999999" fill-opacity="0.7" />
+	 <LineSymbolizer fill="#999999" fill-opacity="0.7" />
 	</Rule>
   </Style>
   
@@ -41,11 +41,11 @@
 	<Datasource>
       <Parameter name="type">postgis</Parameter>
       <Parameter name="host">127.0.0.1</Parameter>
-	  <Parameter name="port">5432</Parameter>
+      <Parameter name="port">5432</Parameter>
       <Parameter name="dbname">xplanedata1000</Parameter>
       <Parameter name="user">webuser</Parameter>      
       <Parameter name="password">password</Parameter>
-      <Parameter name="table">runways</Parameter>
+      <Parameter name="table">mv_runway</Parameter>
     </Datasource>
   </Layer>
   
