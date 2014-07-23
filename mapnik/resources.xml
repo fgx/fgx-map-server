@@ -71,13 +71,13 @@
   <Style name="APT">
 	<Rule>
           <MaxScaleDenominator>100000000</MaxScaleDenominator>
-          <PointSymbolizer file="/home/fgxx/fgx-map-server/icons/fgxmap_png/apt_civ_18x18_25.png" allow-overlap="true" opacity="0.7"/>
-
+          <!-- <PointSymbolizer file="/home/fgxx/fgx-map-server/icons/fgxmap_png/apt_civ_18x18_25.png" allow-overlap="true" opacity="0.7"/> -->
+            <MarkersSymbolizer  marker-type="ellipse" stroke="black" fill="transparent"/>
      </Rule>
     <Rule>
           <MaxScaleDenominator>100000000</MaxScaleDenominator>
 
-          <TextSymbolizer dy="-5" dx="10" face-name="DejaVu Sans Book" character-spacing="2" horizontal-alignment="right" size="11" fill="black" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="true">[apt_ident]</TextSymbolizer>
+          <TextSymbolizer dy="-5" dx="5" face-name="DejaVu Sans Book" character-spacing="2" horizontal-alignment="right" size="11" fill="black" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="true">[apt_ident]</TextSymbolizer>
      </Rule>
      
 	<Rule> 
@@ -167,6 +167,7 @@
   <Style name="ILS">
     <Rule>
         <LineSymbolizer stroke="#C40074" stroke-opacity="0.5" stroke-linecap="butt" stroke-width="1" />
+        <MaxScaleDenominator>700000</MaxScaleDenominator>
     </Rule>
   </Style>
   
@@ -188,6 +189,7 @@
   <Style name="RWY">
     <Rule>
         <LineSymbolizer stroke="#000000" stroke-opacity="1.0" stroke-linecap="butt" stroke-width="2" />
+        <MaxScaleDenominator>600000</MaxScaleDenominator>
     </Rule>
   </Style>
   
@@ -207,7 +209,6 @@
   <Style name="THR">
     <Rule>
         <MarkersSymbolizer  marker-type="ellipse" fill="#89C890"/>
-         
     </Rule>
     <Rule>
         <Filter>[hdg] &gt;= 45 and [hdg] &lt;= 135</Filter>
@@ -245,6 +246,7 @@
     <Rule>
         <PointSymbolizer file="/home/fgxx/fgx-map-server/images/city-red.png" opacity="1.0"/>
         <TextSymbolizer dy="-5" dx="0" face-name="DejaVu Sans Book" fill="black" allow-overlap="true">IM</TextSymbolizer>
+        <MaxScaleDenominator>600000</MaxScaleDenominator>
     </Rule>
   </Style>
   <Layer name="IM" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs">
@@ -263,8 +265,10 @@
 
    <Style name="MM">
     <Rule>
-        <PointSymbolizer file="/home/fgxx/fgx-map-server/images/city-red.png" opacity="1.0"/>
-        <TextSymbolizer dy="-5" dx="0" face-name="DejaVu Sans Book" fill="black" allow-overlap="true">MM</TextSymbolizer>
+        <MarkersSymbolizer  marker-type="ellipse" fill="#FFC000" stroke="#FFC000" stroke-width="0" width="8" height="8"/>
+        
+        <TextSymbolizer dy="-5" dx="0" face-name="DejaVu Sans Book" fill="black" opacity="0.5" allow-overlap="false">MM</TextSymbolizer>
+        <MaxScaleDenominator>600000</MaxScaleDenominator>
     </Rule>
   </Style>
   <Layer name="MM" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs">
@@ -282,8 +286,9 @@
   
    <Style name="OM">
     <Rule>
-        <PointSymbolizer file="/home/fgxx/fgx-map-server/images/city-red.png" opacity="1.0"/>
-        <TextSymbolizer dy="-5" dx="0" face-name="DejaVu Sans Book" fill="black" allow-overlap="true">OM</TextSymbolizer>
+         <MarkersSymbolizer  marker-type="ellipse" fill="#0080FF"  stroke="#0080FF" stroke-width="0" width="8" height="8"/>
+        <TextSymbolizer dy="-5" dx="0" face-name="DejaVu Sans Book" fill="black" opacity="0.5" allow-overlap="false">OM</TextSymbolizer>
+        <MaxScaleDenominator>600000</MaxScaleDenominator>
     </Rule>
   </Style>
   <Layer name="OM" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs">
