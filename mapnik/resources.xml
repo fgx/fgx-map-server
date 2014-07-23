@@ -334,9 +334,9 @@
   
   <Style name="VOR">
     <Rule>
-	  <PointSymbolizer file="/home/fgxx/fgx-map-server/images/vor.png" opacity="1.0"/>
-      <TextSymbolizer dy="-6" dx="6" face-name="DejaVu Sans Book" character-spacing="2" horizontal-alignment="right" size="10" fill="black"  allow-overlap="false" avoid-edges="false">[ident]</TextSymbolizer>
-      
+	  <PointSymbolizer file="/home/fgxx/fgx-map-server/images/vor.png" opacity="0.7" />
+      <TextSymbolizer dy="-3" dx="10" face-name="DejaVu Sans Book" character-spacing="2"  size="11" fill="black"  allow-overlap="true">[ident]</TextSymbolizer>
+      <TextSymbolizer dy="1" dx="10" face-name="DejaVu Sans Book"   size="9" fill="black"  allow-overlap="true">[freq]</TextSymbolizer> 
       <!--<TextSymbolizer name="[freq_mhz]" dy="9" dx="15" face-name="Asap Bold" character-spacing="2" size="11" fill="#000000" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true"/>
       <TextSymbolizer  dy="0" dx="15" face-name="DejaVu Sans Book" character-spacing="2" horizontal-alignment="right" size="9" fill="black" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="false">[name]</TextSymbolizer>
 	  <TextSymbolizer name="[elevation_m]" dy="10" dx="66" face-name="DejaVu Sans Book" character-spacing="2" size="9" fill="#000000" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true"/>
@@ -353,7 +353,7 @@
       <Parameter name="dbname">fgxmap</Parameter>
       <Parameter name="user">fgxx</Parameter>      
       <Parameter name="password">foobar</Parameter>
-      <Parameter name="table">(select * from m_navaid where ntype='vor') as foo</Parameter>
+      <Parameter name="table">(select * from mv_navaid where ntype='vor') as data</Parameter>
     </Datasource>
   </Layer>
   
@@ -362,7 +362,8 @@
   <Style name="DME">
     <Rule>
 	<PointSymbolizer file="/home/fgxx/fgx-map-server/images/dme.png" opacity="0.7"/>
-    <TextSymbolizer dy="-10" dx="15" face-name="DejaVu Sans Book" character-spacing="2" horizontal-alignment="right" size="11" fill="purple" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true">[ident]</TextSymbolizer>
+      <TextSymbolizer dy="-3" dx="10" face-name="DejaVu Sans Book" character-spacing="2"  size="11" fill="black"  allow-overlap="true">[ident]</TextSymbolizer>
+      <TextSymbolizer dy="1" dx="10" face-name="DejaVu Sans Book"   size="9" fill="black"  allow-overlap="true">[freq]</TextSymbolizer> 
       <!--
       <TextSymbolizer name="[navaid_name]" dy="0" dx="15" face-name="DejaVu Sans Book" character-spacing="2" horizontal-alignment="right" size="9" fill="black" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true"/>
 	  <TextSymbolizer name="[freq_mhz]" dy="9" dx="15" face-name="Asap Bold" character-spacing="2" size="11" fill="#000000" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true"/>
@@ -380,7 +381,7 @@
       <Parameter name="dbname">fgxmap</Parameter>
       <Parameter name="user">fgxx</Parameter>      
       <Parameter name="password">foobar</Parameter>
-      <Parameter name="table">(select * from mv_navaid where ntype='dme') as foo</Parameter>
+      <Parameter name="table">(select * from mv_navaid where ntype='dme') as data</Parameter>
     </Datasource>
   </Layer>
   
@@ -388,8 +389,10 @@
   
   <Style name="NDB">
     <Rule>
-	  <PointSymbolizer file="/home/fgxx/fgx-map-server/images/ndb.png" opacity="0.5"/>
-	  <TextSymbolizer  dy="-10" dx="0" face-name="DejaVu Sans Book" character-spacing="2" horizontal-alignment="right" size="11" fill="brown" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true">[ident]</TextSymbolizer>
+      <MaxScaleDenominator>600000</MaxScaleDenominator>
+	  <PointSymbolizer file="/home/fgxx/fgx-map-server/images/ndb1.png" opacity="0.6"/>
+      <TextSymbolizer dy="-3" dx="10" face-name="DejaVu Sans Book" character-spacing="2"  size="11" fill="brown"  allow-overlap="true">[ident]</TextSymbolizer>
+	  <TextSymbolizer dy="1" dx="10" face-name="DejaVu Sans Book"   size="9" fill="brown"  allow-overlap="true">[freq]</TextSymbolizer> 
       <!--
  	  <TextSymbolizer name="[freq_khz]" dy="9" dx="23" face-name="Asap Bold" character-spacing="2" size="11" fill="#000000" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true"/>
 	  <TextSymbolizer name="[elevation_m]" dy="10" dx="74" face-name="DejaVu Sans Book" character-spacing="2" size="9" fill="#000000" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false" avoid-edges="true"/>
