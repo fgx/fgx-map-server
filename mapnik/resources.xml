@@ -70,16 +70,14 @@
   
   <Style name="APT">
 	<Rule>
-         <Filter>[apt_size] = 'large'</Filter>
           <MaxScaleDenominator>100000000</MaxScaleDenominator>
-          <PointSymbolizer file="/home/fgxx/fgx-map-server/icons/fgxmap_png/apt_civ_18x18_25.png" allow-overlap="true" opacity="1.0"/>
+          <PointSymbolizer file="/home/fgxx/fgx-map-server/icons/fgxmap_png/apt_civ_18x18_25.png" allow-overlap="true" opacity="0.7"/>
 
      </Rule>
     <Rule>
-         <Filter>[apt_size] = 'large'</Filter>
           <MaxScaleDenominator>100000000</MaxScaleDenominator>
 
-          <TextSymbolizer dy="-11" dx="15" face-name="DejaVu Sans Book" character-spacing="2" horizontal-alignment="right" size="11" fill="blue" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="true">[apt_ident]</TextSymbolizer>
+          <TextSymbolizer dy="-5" dx="10" face-name="DejaVu Sans Book" character-spacing="2" horizontal-alignment="right" size="11" fill="black" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="true">[apt_ident]</TextSymbolizer>
      </Rule>
      
 	<Rule> 
@@ -127,10 +125,32 @@
   </Layer>
  
   
+
   
+  <Style name="ILS">
+    <Rule>
+        <LineSymbolizer stroke="#C40074" stroke-opacity="0.5" stroke-linecap="butt" stroke-width="1" />
+    </Rule>
+  </Style>
+  
+  <Layer name="ILS" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs">
+    <StyleName>ILS</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="host">127.0.0.1</Parameter>
+      <Parameter name="port">5432</Parameter>
+      <Parameter name="dbname">fgxmap</Parameter>
+      <Parameter name="user">fgxx</Parameter>      
+      <Parameter name="password">foobar</Parameter>
+      <Parameter name="table">(select * from mv_ils_line) as data</Parameter>
+    </Datasource>
+  </Layer>
+  
+  
+    
   <Style name="RWY">
     <Rule>
-        <LineSymbolizer stroke="#000000" stroke-opacity="1.0" stroke-linecap="butt" stroke-width="2">[rwy_center_line]</LineSymbolizer>
+        <LineSymbolizer stroke="#000000" stroke-opacity="1.0" stroke-linecap="butt" stroke-width="2" />
     </Rule>
   </Style>
   
@@ -147,13 +167,47 @@
     </Datasource>
   </Layer>
   
+  <Style name="THR">
+    <Rule>
+        <MarkersSymbolizer  marker-type="ellipse" fill="#89C890"/>
+         
+    </Rule>
+    <Rule>
+        <Filter>[hdg] &gt;= 45 and [hdg] &lt;= 135</Filter>
+        <TextSymbolizer dy="0" dx="-10" face-name="DejaVu Sans Book" fill="purple" allow-overlap="false">[hdg]</TextSymbolizer>
+    </Rule>
+     <Rule>
+        <Filter>[hdg] &gt;= 136 and [hdg] &lt;= 225</Filter>
+        <TextSymbolizer dy="-10" dx="0" face-name="DejaVu Sans Book" fill="green" allow-overlap="false">[hdg]</TextSymbolizer>
+    </Rule>
+    <Rule>
+        <Filter>[hdg] &gt;= 226 and [hdg] &lt;= 315</Filter>
+        <TextSymbolizer dy="0" dx="10" face-name="DejaVu Sans Book" fill="brown" allow-overlap="false">[hdg]</TextSymbolizer>
+    </Rule>
+    <Rule>
+        <Filter>[hdg] &gt;= 316 and [hdg] &lt;= 360 or [hdg] &gt;= 0 and [hdg] &lt;= 44</Filter>
+        <TextSymbolizer dy="0" dx="0" face-name="DejaVu Sans Book" fill="red" allow-overlap="false">[hdg]</TextSymbolizer>
+    </Rule>
+  </Style>
   
+  <Layer name="THR" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs">
+    <StyleName>THR</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="host">127.0.0.1</Parameter>
+      <Parameter name="port">5432</Parameter>
+      <Parameter name="dbname">fgxmap</Parameter>
+      <Parameter name="user">fgxx</Parameter>      
+      <Parameter name="password">foobar</Parameter>
+      <Parameter name="table">(select * from mv_threshold) as data</Parameter>
+    </Datasource>
+  </Layer>
   
   <!-- Markers -->
   <Style name="IM">
     <Rule>
         <PointSymbolizer file="/home/fgxx/fgx-map-server/images/city-red.png" opacity="1.0"/>
-        <TextSymbolizer dy="0" dx="5" face-name="DejaVu Sans Book" fill="black" allow-overlap="true">IM</TextSymbolizer>
+        <TextSymbolizer dy="-5" dx="0" face-name="DejaVu Sans Book" fill="black" allow-overlap="true">IM</TextSymbolizer>
     </Rule>
   </Style>
   <Layer name="IM" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs">
@@ -173,7 +227,7 @@
    <Style name="MM">
     <Rule>
         <PointSymbolizer file="/home/fgxx/fgx-map-server/images/city-red.png" opacity="1.0"/>
-        <TextSymbolizer dy="0" dx="5" face-name="DejaVu Sans Book" fill="black" allow-overlap="true">MM</TextSymbolizer>
+        <TextSymbolizer dy="-5" dx="0" face-name="DejaVu Sans Book" fill="black" allow-overlap="true">MM</TextSymbolizer>
     </Rule>
   </Style>
   <Layer name="MM" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs">
@@ -192,7 +246,7 @@
    <Style name="OM">
     <Rule>
         <PointSymbolizer file="/home/fgxx/fgx-map-server/images/city-red.png" opacity="1.0"/>
-        <TextSymbolizer dy="0" dx="5" face-name="DejaVu Sans Book" fill="black" allow-overlap="true">OM</TextSymbolizer>
+        <TextSymbolizer dy="-5" dx="0" face-name="DejaVu Sans Book" fill="black" allow-overlap="true">OM</TextSymbolizer>
     </Rule>
   </Style>
   <Layer name="OM" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs">
