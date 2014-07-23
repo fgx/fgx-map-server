@@ -77,7 +77,7 @@
     <Rule>
           <MaxScaleDenominator>100000000</MaxScaleDenominator>
 
-          <TextSymbolizer dy="-5" dx="5" face-name="DejaVu Sans Book" character-spacing="2" horizontal-alignment="right" size="11" fill="darkblue" halo-fill= "#DDDDDD" halo-radius="1" allow-overlap="false">[apt_ident]</TextSymbolizer>
+          <TextSymbolizer dy="-5" dx="5" face-name="DejaVu Sans Book" size="11" fill="darkblue">[apt_ident]</TextSymbolizer>
      </Rule>
      
 
@@ -140,7 +140,8 @@
   <Style name="ILS">
     <Rule>
         <LineSymbolizer stroke="#C40074" stroke-opacity="0.5" stroke-linecap="butt" stroke-width="1" />
-        <MaxScaleDenominator>700000</MaxScaleDenominator>
+        <MarkersSymbolizer  marker-type="arrow" stroke="#C40074" fill="transparent" placement="line" spacing="200" width="20" height="10" opacity="0.7"/>
+        <MaxScaleDenominator>900000</MaxScaleDenominator>
     </Rule>
   </Style>
   
@@ -161,8 +162,14 @@
     
   <Style name="RWY">
     <Rule>
-        <LineSymbolizer stroke="#000000" stroke-opacity="1.0" stroke-linecap="butt" stroke-width="2" />
+        <Filter>[surface_id] = 1 or [surface_id] = 2</Filter>
+        <LineSymbolizer stroke="black" stroke-opacity="0.9" stroke-linecap="butt" stroke-width="3" />
         <MaxScaleDenominator>600000</MaxScaleDenominator>
+    </Rule>
+    <Rule>
+        <Filter>[surface_id] = 3 or [surface_id] = 4</Filter>
+        <LineSymbolizer stroke="green" stroke-opacity="0.8" stroke-linecap="butt" stroke-width="1" />
+        <MaxScaleDenominator>200000</MaxScaleDenominator>
     </Rule>
   </Style>
   <Layer name="RWY" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs">
@@ -389,7 +396,7 @@
   
   <Style name="NDB">
     <Rule>
-      <MaxScaleDenominator>600000</MaxScaleDenominator>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
 	  <PointSymbolizer file="/home/fgxx/fgx-map-server/images/ndb1.png" opacity="0.6"/>
       <TextSymbolizer dy="-3" dx="10" face-name="DejaVu Sans Book" character-spacing="2"  size="11" fill="brown"  allow-overlap="true">[ident]</TextSymbolizer>
 	  <TextSymbolizer dy="1" dx="10" face-name="DejaVu Sans Book"   size="9" fill="brown"  allow-overlap="true">[freq]</TextSymbolizer> 
