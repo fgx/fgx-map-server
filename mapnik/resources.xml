@@ -208,24 +208,35 @@
   
   <Style name="THR">
     <Rule>
-        <MarkersSymbolizer  marker-type="ellipse" fill="#89C890"/>
+        <MarkersSymbolizer  marker-type="ellipse" fill="#538B51" stroke="#538B51" width="6" height="6"/>
+        <MaxScaleDenominator>400000</MaxScaleDenominator>
     </Rule>
     <Rule>
         <Filter>[hdg] &gt;= 45 and [hdg] &lt;= 135</Filter>
-        <TextSymbolizer dy="0" dx="-10" face-name="DejaVu Sans Book" fill="purple" allow-overlap="false">[hdg]</TextSymbolizer>
+        <MaxScaleDenominator>400000</MaxScaleDenominator>
+        <TextSymbolizer dy="0" dx="-10" face-name="DejaVu Sans Book" fill="black" allow-overlap="false">[hdg]</TextSymbolizer>
     </Rule>
      <Rule>
         <Filter>[hdg] &gt;= 136 and [hdg] &lt;= 225</Filter>
-        <TextSymbolizer dy="-10" dx="0" face-name="DejaVu Sans Book" fill="green" allow-overlap="false">[hdg]</TextSymbolizer>
+        <MaxScaleDenominator>400000</MaxScaleDenominator>
+        <TextSymbolizer dy="-6" dx="0" face-name="DejaVu Sans Book" fill="black" allow-overlap="false">[hdg]</TextSymbolizer>
     </Rule>
     <Rule>
         <Filter>[hdg] &gt;= 226 and [hdg] &lt;= 315</Filter>
-        <TextSymbolizer dy="0" dx="10" face-name="DejaVu Sans Book" fill="brown" allow-overlap="false">[hdg]</TextSymbolizer>
+        <MaxScaleDenominator>400000</MaxScaleDenominator>
+        <TextSymbolizer dy="0" dx="10" face-name="DejaVu Sans Book" fill="black" allow-overlap="false">[hdg]</TextSymbolizer>
     </Rule>
     <Rule>
-        <Filter>[hdg] &gt;= 316 and [hdg] &lt;= 360 or [hdg] &gt;= 0 and [hdg] &lt;= 44</Filter>
-        <TextSymbolizer dy="0" dx="0" face-name="DejaVu Sans Book" fill="red" allow-overlap="false">[hdg]</TextSymbolizer>
+        <Filter>([hdg] &gt;= 316 and [hdg] &lt;= 360)</Filter>
+        <MaxScaleDenominator>400000</MaxScaleDenominator>
+        <TextSymbolizer dy="0" dx="2" face-name="DejaVu Sans Book" fill="red" allow-overlap="false">[hdg]</TextSymbolizer>
     </Rule>
+    <Rule>
+        <Filter>([hdg] &gt;= 0 and [hdg] &lt;= 44)</Filter>
+        <MaxScaleDenominator>400000</MaxScaleDenominator>
+        <TextSymbolizer dy="0" dx="-10" face-name="DejaVu Sans Book" fill="red" allow-overlap="false">[hdg]</TextSymbolizer>
+    </Rule>
+    
   </Style>
   
   <Layer name="THR" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs">
